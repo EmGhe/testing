@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: base_data_testing
+    description: small table to test dbt and CI/CD github actions

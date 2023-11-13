@@ -1,0 +1,27 @@
+name: test production
+
+on:
+  push:
+    branches:
+    - main
+
+  worklflow_dispatch:
+
+jobs:
+  testing_code:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout branch
+      - uses: actions/checkout@v2
+
+      - name: Check dbt connection
+      - run: dbt debug
+
+      - name: Check dbt connection
+      - run: dbt deps
+
+      - name: Test & run dbt
+      - run: dbt test
+            
